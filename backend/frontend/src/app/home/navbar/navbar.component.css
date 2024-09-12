@@ -1,0 +1,26 @@
+.bg-custom {
+    background-color: rgb(78, 130, 165) !important;
+}
+.search-custom{
+    outline-color: black;
+}
+.btn-outline-red{
+    color: red;
+    outline: color(red);
+}
+.user-profile-img {
+    width: 40px;   /* Adjust the size of the circle */
+    height: 40px;
+    border-radius: 50%;  /* Makes the circle shape */
+    background-color: #fff;  /* Background color of the circle */
+    display: flex;
+    justify-content: center;  /* Centers the icon horizontally */
+    align-items: center;  /* Centers the icon vertically */
+    border: 2px solid #fff;  /* Optional border for the circle */
+  }
+  
+  .user-profile-img i {
+    font-size: 24px;  /* Increases the size of the user icon */
+    color: #000;  /* Change the color of the icon */
+  }
+  

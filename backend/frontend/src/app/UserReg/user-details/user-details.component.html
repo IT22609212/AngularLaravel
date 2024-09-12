@@ -1,0 +1,21 @@
+<div  class="container">
+   
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th width="220px">Action</th>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>
+                <a href="#" [routerLink]="['/UserReg/', user.id,'view']">View</a>
+                <a href="#" [routerLink]="['/UserReg/', user.id,'edit']">Edit</a>
+                <button type="button" class="btn btn-danger" (click)="deletePost(user.id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>

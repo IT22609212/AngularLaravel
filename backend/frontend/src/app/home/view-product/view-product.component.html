@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>View Product</h1>
+    <button [routerLink]="['/UserReg/dashboard']" class="btn btn-primary">Back</button>
+
+    <div *ngIf="products">
+        <div>
+            <strong>ID:</strong>
+            <p>{{ products.id }}</p>
+        </div>
+
+        <div>
+            <strong>Product Name:</strong>
+            <p>{{ products.product_name }}</p>
+        </div>
+        <div>
+            <strong>Product Description:</strong>
+            <p>{{ products.product_desc }}</p>
+        </div>
+        <div>
+            <strong>Quantity:</strong>
+            <p>{{ products.quantity }}</p>
+        </div>
+        <div>
+            <strong>Product Image:</strong>
+            <div>
+                <img [src]="getImageUrl(products.image_url)" alt="{{ products.product_name }}" class="img-thumbnail" style="max-width: 200px;">
+            </div>
+           
+        </div>
+        <div>
+            <strong>Price:</strong>
+            <p>{{ products.price |currency: 'LKR '}}</p>
+        </div>
+    </div>
+    <div *ngIf="!products">
+        <p>Loading...</p>
+    </div>
+</div>

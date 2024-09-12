@@ -1,0 +1,79 @@
+<div>
+    <div class="register-container">
+        <h1>Add Product</h1>
+        <form [formGroup]="ProductForm" (ngSubmit)="OnSubmit()">
+            <div>
+                <label>Product Name</label>
+                <input type="text" formControlName="product_name" class="form-control">
+                <div class="alert alert-danger" *ngIf="f['product_name'].touched && f['product_name'].invalid">
+                    <div *ngIf="f['product_name'].errors && f['product_name'].errors['required']">
+                        Product Name is Required
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity</label>
+                <div class="input-group">
+                    <input
+                        type="number"
+                        id="quantity"
+                        formControlName="quantity"
+                        class="form-control"
+                        min="0"
+                    />
+                </div>
+                <div *ngIf="f['quantity'].touched && f['quantity'].invalid">
+                    <div *ngIf="f['quantity'].errors && f['quantity'].errors['required']">
+                        Quantity is Required
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="product_desc" class="form-label">Product Description</label>
+                <textarea
+                    id="product_desc"
+                    formControlName="product_desc"
+                    class="form-control"
+                    placeholder="Enter product description"
+                ></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input
+                    type="number"
+                    id="price"
+                    formControlName="price"
+                    class="form-control"
+                    placeholder="Enter product price"
+                    min="0"
+                    step="0.01"
+                />
+                <div *ngIf="f['price'].touched && f['price'].invalid">
+                    <div *ngIf="f['price'].errors && f['price'].errors['required']">
+                        Price is Required
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="image_url" class="form-label">Product Image</label>
+                <input
+                    type="file"
+                    id="image_url"
+                    (change)="onImageChange($event)"
+                    class="form-control"
+                />
+                <div *ngIf="imagePreview" class="mt-2">
+                    <img [src]="imagePreview" alt="Product Image" class="img-thumbnail" style="max-width: 200px;">
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" [disabled]="ProductForm.invalid">Add Product</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.custom-snackbar {
+    background-color: #ff9100 !important; /* Force the background color */
+    color: white !important; /* Ensure text color is white */
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+}
+
+

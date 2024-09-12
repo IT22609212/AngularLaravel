@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>View User</h1>
+    <a [routerLink]="['/UserReg/dashboard']" class="btn btn-primary">Back</a>
+
+    <div *ngIf="user; else loading">
+        <div>
+            <strong>ID:</strong>
+            <p>{{user.id}}</p>
+        </div>
+        <div>
+            <strong>Name:</strong>
+            <p>{{user.name}}</p>
+        </div>
+        <div>
+            <strong>Email:</strong>
+            <p>{{user.email}}</p>
+        </div>
+    </div>
+
+    <ng-template #loading>
+        <p>Loading...</p>
+    </ng-template>
+</div>

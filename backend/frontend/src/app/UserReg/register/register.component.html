@@ -1,0 +1,110 @@
+<div>
+<div class="register-container">
+    <h1>SignUp</h1>
+    <form [formGroup]="registerForm" (ngSubmit)="OnSubmit()">
+        <div>
+            <label>Name</label>
+            <input type="text" formControlName="name">
+            <div class="alert alert-danger" *ngIf="f['name'].touched && f['name'].invalid">
+                <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is Required</div>
+            </div>
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="email" formControlName="email">
+            <div class="alert alert-danger" *ngIf="f['email'].touched && f['email'].invalid">
+                <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is Required</div>
+            </div>
+        </div>
+        <div>
+            <label >Password</label>
+            <input type="password" formControlName="password">
+            <div class="alert alert-danger" *ngIf="f['password'].touched && f['password'].invalid">
+                <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is Required</div>
+            </div>
+        </div>
+        <div>
+            <label>Confirm Password</label>
+            <input type="password" formControlName="confirmPassword">
+            <div class="alert alert-danger" *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid">
+                <div *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['required']">Confirm the password</div>
+            </div>
+        </div>
+        <div>
+            <button type="submit" [disabled]="registerForm.invalid">Register</button>
+            <p>Already have an account? 
+                <a href="#" routerLink="/UserReg/login">Login</a>
+            </p>
+        </div>
+           
+    </form>
+</div>
+</div>
+
+
+
+
+
+
+<!-- <div class="container" id="container">
+    <div class="form-container sign-up-container">
+      <form [formGroup]="registerForm" (ngSubmit)="OnSubmit()">
+        <h1>Create Account</h1>
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <span>or use your email for registration</span>
+
+        
+        <input type="text" placeholder="Name" formControlName="name"/>
+        <div class="alert alert-danger" *ngIf="f['name'].touched && f['name'].invalid">
+            <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is Required</div>
+        </div>
+
+        <input type="email" placeholder="Email" formControlName="email"/>
+        <div class="alert alert-danger" *ngIf="f['email'].touched && f['email'].invalid">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']"></div>
+        </div>
+
+        <input type="password" placeholder="Password" formControlName="password"/>
+        <div class="alert alert-danger" *ngIf="f['password'].touched && f['password'].invalid">
+            <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is Required</div>
+        </div>
+
+
+        <button [disabled]="registerForm.invalid">Sign Up</button>
+      </form>
+    </div>
+    <div class="form-container sign-in-container">
+      <form>
+        <h1>Sign in</h1>
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <span>or use your account</span>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <a href="#">Forgot your password?</a>
+        <button>Sign In</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>To keep connected with us please login with your personal info</p>
+          <button class="ghost" id="signIn" (click)="signIn()">Sign In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Friend!</h1>
+          <p>Enter your personal details and start journey with us</p>
+          <button class="ghost" id="signUp" (click)="signUp()">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+   -->
